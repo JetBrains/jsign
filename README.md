@@ -40,7 +40,11 @@ See https://ebourg.github.io/jsign for more information.
 
 ## Changes
 
-#### Version 4.0 (in development)
+#### Version 4.1 (in development)
+
+* Fixed the _"Map failed"_ OutOfMemoryError when signing large MSI files
+
+#### Version 4.0 (2021-08-09)
 
 * MS Cabinet signing has been implemented (contributed by Joseph Lee)
 * Signatures can be detached and re-attached to make the builds reproducible without access to the private key
@@ -52,6 +56,8 @@ See https://ebourg.github.io/jsign for more information.
 * The keystore aliases are now listed in the error message if the alias specified is incorrect
 * The `storetype` parameter is no longer required for JCEKS keystores
 * Fixed the update of the PE checksum (contributed by Markus Kilås)
+* The `CMSAlgorithmProtection` attribute is no longer added to the signature (contributed by Yegor Yarko)
+* The signature algorithm is identified as `RSA` instead of `sha*RSA` when using SHA-2 digests (contributed by Yegor Yarko)
 * Upgraded BouncyCastle to 1.69
 
 #### Version 3.1 (2020-03-01)
